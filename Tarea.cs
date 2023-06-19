@@ -35,7 +35,7 @@ namespace EspacioTarea
             Descripcion = desc;
         }
 
-        //esto es en caso de querer concatenar dos atributos, pero como tengo que mostrar solo uno, lo devuelvo por la prop
+        //esto es en caso de querer concatenar dos atributos, pero como tengo que mostrar solo uno, lo devuelvo por la
         /*public string MostrarTarea()
         {
             return "Descripcion: " + Descripcion;

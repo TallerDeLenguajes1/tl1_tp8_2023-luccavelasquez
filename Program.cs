@@ -22,7 +22,7 @@ internal class Program
             //Console.WriteLine(TareaX.Descripcion);
         }
         //muestro tareas
-        for (int i = 0; i < cantTareas; i++)
+        for (int i = 0; i < cantTareas; i++) //se puede hacer con un foreach
         {
             Console.WriteLine(i+ "-Descripcion: " + pendientes[i].Descripcion + " Duracion: "+pendientes[i].Duracion);
            
@@ -41,17 +41,43 @@ internal class Program
         realizadas.Add(TareaAux);
         pendientes.RemoveAt(idIngresadoInt);
         
-
-
-        //para mostrar ocurre el problema de que cada lista tiene distinto tamaño y salta error
-        /*for (int i = 0; i < cantTareas; i++)
+        //muestra las tareas que quedaron en pendientes
+        /*foreach (var tarea in pendientes)
         {
-            Console.WriteLine(i+ "-Descripcion: " + pendientes[i].Descripcion);   
+            int j = 0;
+            Console.WriteLine(j + "-Descripcion: " + tarea.Descripcion);
+            j++;            
+
         }*/
 
-        //agregar la sumatoria de horas
-
+        //3
+        /*
+        string descrip = "";
         
+        Console.WriteLine("Ingrese la descripcion de tarea que decea buscar: ");
+        descrip = Console.ReadLine();
+
+        // // pendientes.Find(tarea3 => tarea3.Id ==3) devuelve tarea 3 (buscar, clae!)
+        //que pasa si no me encuentra la tarea? No enteiendo bien la funcion
+        Tarea tareaBuscada = pendientes.Find(tareaBuscada => tareaBuscada.Descripcion == descrip);
+        */
+
+
+        //4 agregar la sumatoria de horas
+
+        int sumario = 30; //preguntar si tiene que ser la sumatoria de las tareas realizaas o de las pendientes?
+        string directorio = @"C:\repositorioTp8\tl1_tp8_2023-luccavelasquez";
+        string NuevoArchivo = directorio + @"\Horas_trabajadas.txt";
+
+        if (!File.Exists(NuevoArchivo)) //se pregunta si el archivo existe o no, en caso de no existir lo crea
+        {
+            File.Create(NuevoArchivo); //crea el archivo en la ruta
+
+        } //preguntar si hay q utilizar los using para usar las librerias
+
+        var archivo = new StreamWriter("Horas_trabajadas.txt");//preg porque no hace falta poner toda la dire
+        archivo.WriteLine(sumario);
+        archivo.Close();
 
 
     }
